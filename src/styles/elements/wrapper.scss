@@ -1,0 +1,12 @@
+/* ==========================================================================
+   WRAPPER / ELEMENT
+   ========================================================================== */
+
+.wrapper {
+    max-width: $breakpoint-lg;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    @media (width <= $breakpoint-sm) {
+        padding: 0 var(--spacing-xs);
+    }
+}

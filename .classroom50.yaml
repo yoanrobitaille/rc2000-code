@@ -1,0 +1,12 @@
+schema: "classroom50/repo-config/v1"
+classroom: "pw-a26"
+assignment: "revision-tim-quebec"
+owner:
+  username: "yoyorobi"
+  id: 157531535
+  accepted_at: "2026-09-01T17:26:28Z"
+source:
+  owner: "tim-cw"
+  owner_id: 97471838
+  repo: "tpl_revision-tim-quebec"
+  branch: "main"

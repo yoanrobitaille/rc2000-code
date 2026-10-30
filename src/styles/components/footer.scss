@@ -1,0 +1,38 @@
+.footer {
+    padding: 24px 0;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-sm);
+        p.logo {
+            color: var(--color-white);
+        }
+        hr {
+            width: 100%;
+        }
+        ul {
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            li {
+                list-style-type: none;
+                a {
+                    color: var(--color-white);
+                    padding: 9px;
+                    background-color: #373737;
+                    border-radius: 25px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+        .copyright {
+            color: #d9dbe1;
+            margin: 0;
+        }
+    }
+}
