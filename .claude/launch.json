@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dist",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["browser-sync", "start", "--server", "dist", "--port", "3010", "--no-open", "--no-notify", "--no-ui"],
+      "port": 3010
+    }
+  ]
+}

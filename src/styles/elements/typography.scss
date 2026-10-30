@@ -11,27 +11,43 @@ h6 {
     font-family: var(--font-primary);
     line-height: 100%;
 }
+p {
+    margin: 0;
+}
+p.lead {
+    font-size: 18px;
+}
+p.etiquette {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: var(--color-sarcelle);
+}
 
 h1 {
     font-size: var(--font-size-h1);
     margin: 0;
     color: var(--color-primary);
-
-    font-weight: 200;
+    line-height: 98%;
+    letter-spacing: -4%;
+    font-weight: 700;
 }
 
 h2 {
     font-size: var(--font-size-h2);
+    color: var(--color-primary);
     margin: 0;
-    font-weight: 600;
+    font-weight: 700;
+    line-height: 105%;
+    letter-spacing: -3%;
 }
 
 h3 {
     font-size: var(--font-size-h3);
     margin: 0;
-    margin-bottom: 5px;
     line-height: 120%;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 h4 {

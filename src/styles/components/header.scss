@@ -1,0 +1,21 @@
+.header {
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    background-color: var(--color-bg-primary);
+    border-bottom: 2px solid var(--color-border);
+    z-index: 999;
+
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        ul {
+            display: flex;
+            gap: 25px;
+            li {
+                list-style-type: none;
+            }
+        }
+    }
+}

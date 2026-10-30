@@ -3,13 +3,13 @@
    ========================================================================== */
 /// Font family
 :root {
-    --font-primary: 'Nunito', sans-serif;
-    --font-secondary: 'PT Sans', sans-serif;
+    --font-primary: 'Manrope', sans-serif;
+    --font-secondary: 'DM Sans', sans-serif;
 
     --font-size-content: #{typo(18px)};
 
     /// Grosseur des textes
-    --font-size-h1: #{typo(60px, 100px)};
-    --font-size-h2: #{typo(40px, 50px)};
-    --font-size-h3: #{typo(30px, 35px)};
+    --font-size-h1: #{typo(44px, 96px)};
+    --font-size-h2: #{typo(32px, 56px)};
+    --font-size-h3: #{typo(32px, 32px)};
 }

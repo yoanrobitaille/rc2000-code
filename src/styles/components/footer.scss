@@ -1,38 +1,57 @@
 .footer {
-    padding: 24px 0;
-    background-color: var(--color-black);
-    color: var(--color-white);
+    padding: 50px 0;
+    background-color: var(--color-bg-secondary);
+    h2,
+    p {
+        color: var(--color-white);
+    }
     .wrapper {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: var(--spacing-sm);
-        p.logo {
-            color: var(--color-white);
-        }
-        hr {
-            width: 100%;
-        }
-        ul {
+        gap: 32px;
+    }
+    .infos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: end;
+        .right {
             display: flex;
-            gap: 20px;
-            margin: 0;
-            li {
-                list-style-type: none;
-                a {
-                    color: var(--color-white);
-                    padding: 9px;
-                    background-color: #373737;
-                    border-radius: 25px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+            flex-direction: column;
+            gap: 32px;
+            .title {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            }
+            .etiquette {
+                color: var(--color-or);
+            }
+            .lead {
+                opacity: 75%;
+            }
+        }
+        .left {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            .info {
+                display: flex;
+                gap: 15px;
+                align-items: center;
+                color: var(--color-white);
+                .icon {
+                    fill: none;
+                    stroke: var(--color-or);
                 }
             }
         }
-        .copyright {
-            color: #d9dbe1;
-            margin: 0;
-        }
+    }
+    hr {
+        opacity: 60%;
+        width: 100%;
+    }
+    .copyright {
+        opacity: 60%;
+        align-self: flex-start;
     }
 }
