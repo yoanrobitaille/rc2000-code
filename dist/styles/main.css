@@ -1425,6 +1425,13 @@ a.disabled {
 
 .footer {
   padding: 50px 0;
+}
+@media (width <= 768px) {
+  .footer {
+    padding: 25px 0;
+  }
+}
+.footer {
   background-color: var(--color-bg-secondary);
 }
 .footer h2,
@@ -1440,6 +1447,13 @@ a.disabled {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: end;
+}
+@media (width <= 768px) {
+  .footer .infos {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    gap: 32px;
+  }
 }
 .footer .infos .right {
   display: flex;
@@ -1507,6 +1521,15 @@ html {
   scroll-behavior: smooth;
 }
 
+section {
+  padding: 50px 0;
+}
+@media (width <= 768px) {
+  section {
+    padding: 30px 0;
+  }
+}
+
 .intro {
   display: flex;
   flex-direction: column;
@@ -1526,10 +1549,12 @@ html {
 .intro .lead {
   width: 70%;
 }
-
-.hero {
-  padding: 50px 0;
+@media (width <= 768px) {
+  .intro .lead {
+    width: 100%;
+  }
 }
+
 .hero .wrapper {
   display: flex;
   flex-direction: column;
@@ -1619,9 +1644,6 @@ html {
   transform: translateY(4px);
 }
 
-.bromont {
-  padding: 50px 0;
-}
 .bromont .wrapper {
   display: flex;
   flex-direction: column;
@@ -1631,6 +1653,11 @@ html {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
+}
+@media (width <= 768px) {
+  .bromont .cards {
+    grid-template-columns: 1fr;
+  }
 }
 
 .bromont .card,
@@ -1682,6 +1709,14 @@ html {
   justify-content: space-between;
   align-items: center;
 }
+@media (width <= 550px) {
+  .bromont .card .bot,
+  .montreal .card .bot {
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+  }
+}
 .bromont .card .bot a,
 .montreal .card .bot a {
   color: var(--color-sarcelle);
@@ -1696,7 +1731,6 @@ html {
 }
 
 .montreal {
-  padding: 50px 0;
   background-color: var(--color-bg-secondary);
 }
 .montreal .wrapper {
@@ -1716,6 +1750,16 @@ html {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 24px;
   color: var(--color-white);
+}
+@media (width <= 1024px) {
+  .montreal .wrapper .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (width <= 768px) {
+  .montreal .wrapper .cards {
+    grid-template-columns: 1fr;
+  }
 }
 .montreal .wrapper .cards .card {
   background-color: rgba(255, 255, 255, 0.06);

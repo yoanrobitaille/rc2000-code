@@ -2,6 +2,12 @@ html {
     scroll-padding-top: 70px;
     scroll-behavior: smooth;
 }
+section {
+    padding: 50px 0;
+    @media (width <= $breakpoint-sm) {
+        padding: 30px 0;
+    }
+}
 
 .intro {
     display: flex;
@@ -20,10 +26,12 @@ html {
     }
     .lead {
         width: 70%;
+        @media (width <= $breakpoint-sm) {
+            width: 100%;
+        }
     }
 }
 .hero {
-    padding: 50px 0;
     .wrapper {
         display: flex;
         flex-direction: column;
@@ -109,7 +117,6 @@ html {
     }
 }
 .bromont {
-    padding: 50px 0;
     .wrapper {
         display: flex;
         flex-direction: column;
@@ -119,6 +126,9 @@ html {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 24px;
+        @media (width <= $breakpoint-sm) {
+            grid-template-columns: 1fr;
+        }
     }
 }
 .bromont .card,
@@ -161,6 +171,11 @@ html {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media (width <= 550px) {
+            flex-direction: column;
+            align-items: start;
+            gap: 16px;
+        }
         a {
             color: var(--color-sarcelle);
             display: flex;
@@ -174,7 +189,6 @@ html {
     }
 }
 .montreal {
-    padding: 50px 0;
     background-color: var(--color-bg-secondary);
     .wrapper {
         display: flex;
@@ -193,6 +207,12 @@ html {
             grid-template-columns: 1fr 1fr 1fr;
             gap: 24px;
             color: var(--color-white);
+            @media (width <= $breakpoint-md) {
+                grid-template-columns: 1fr 1fr;
+            }
+            @media (width <= $breakpoint-sm) {
+                grid-template-columns: 1fr;
+            }
             .card {
                 background-color: rgba($color: #ffffff, $alpha: 0.06);
                 p {
