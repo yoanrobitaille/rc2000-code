@@ -50,6 +50,19 @@
                 .icon {
                     fill: none;
                     stroke: var(--color-or);
+                    transition: transform 0.3s $ease-out-back;
+                }
+                a {
+                    transition: color 0.3s $ease-out-cubic;
+                }
+                // Courriel et téléphone : l'icône bouge et le texte passe en or
+                &:has(a:hover, a:focus-visible) {
+                    .icon {
+                        transform: translateY(-3px) rotate(-8deg);
+                    }
+                    a {
+                        color: var(--color-or);
+                    }
                 }
             }
         }

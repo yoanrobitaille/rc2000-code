@@ -5,6 +5,12 @@
     background-color: var(--color-bg-primary);
     border-bottom: 2px solid var(--color-border);
     z-index: 999;
+    transition: box-shadow 0.3s $ease-out-cubic;
+
+    // Ombre ajoutée par Header.js quand on défile
+    &.is-scrolled {
+        box-shadow: 0 8px 24px rgba(14, 39, 48, 0.08);
+    }
 
     .wrapper {
         display: flex;
@@ -15,6 +21,13 @@
             gap: 25px;
             li {
                 list-style-type: none;
+            }
+            a {
+                transition: color 0.3s $ease-out-cubic;
+                &:hover,
+                &:focus-visible {
+                    color: var(--color-sarcelle);
+                }
             }
         }
     }

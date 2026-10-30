@@ -1485,6 +1485,16 @@ a.disabled {
 .footer .infos .left .info .icon {
   fill: none;
   stroke: var(--color-or);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.footer .infos .left .info a {
+  transition: color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.footer .infos .left .info:has(a:hover, a:focus-visible) .icon {
+  transform: translateY(-3px) rotate(-8deg);
+}
+.footer .infos .left .info:has(a:hover, a:focus-visible) a {
+  color: var(--color-or);
 }
 .footer hr {
   opacity: 60%;
@@ -1502,6 +1512,10 @@ a.disabled {
   background-color: var(--color-bg-primary);
   border-bottom: 2px solid var(--color-border);
   z-index: 999;
+  transition: box-shadow 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.header.is-scrolled {
+  box-shadow: 0 8px 24px rgba(14, 39, 48, 0.08);
 }
 .header .wrapper {
   display: flex;
@@ -1514,6 +1528,12 @@ a.disabled {
 }
 .header .wrapper ul li {
   list-style-type: none;
+}
+.header .wrapper ul a {
+  transition: color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.header .wrapper ul a:hover, .header .wrapper ul a:focus-visible {
+  color: var(--color-sarcelle);
 }
 
 html {
@@ -1697,6 +1717,13 @@ section {
   width: -moz-fit-content;
   width: fit-content;
   border-radius: 100px;
+  transition: background-color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), border-color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.bromont .card:hover .bulle,
+.montreal .card:hover .bulle {
+  background-color: var(--color-sarcelle);
+  border-color: var(--color-sarcelle);
+  color: var(--color-white);
 }
 .bromont .card hr,
 .montreal .card hr {
@@ -1723,6 +1750,12 @@ section {
   display: flex;
   gap: 8px;
   align-items: center;
+  transition: gap 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.bromont .card .bot a:hover, .bromont .card .bot a:focus-visible,
+.montreal .card .bot a:hover,
+.montreal .card .bot a:focus-visible {
+  gap: 14px;
 }
 .bromont .card .bot .icon,
 .montreal .card .bot .icon {
@@ -1774,6 +1807,11 @@ section {
   color: var(--color-or);
   border-color: var(--color-or);
 }
+.montreal .wrapper .cards .card:hover .bulle {
+  background-color: var(--color-or);
+  color: var(--color-bg-secondary);
+  opacity: 1;
+}
 .montreal .wrapper .cards .bot {
   display: flex;
   flex-direction: column;
@@ -1785,9 +1823,6 @@ section {
 }
 .montreal .wrapper .cards .bot a {
   color: var(--color-or);
-  display: flex;
-  gap: 8px;
-  align-items: center;
 }
 .montreal .wrapper .cards .bot .icon {
   fill: none;

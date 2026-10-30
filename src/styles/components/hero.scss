@@ -161,6 +161,16 @@ section {
         border: 1px solid var(--color-border);
         width: fit-content;
         border-radius: 100px;
+        transition:
+            background-color 0.3s $ease-out-cubic,
+            border-color 0.3s $ease-out-cubic,
+            color 0.3s $ease-out-cubic;
+    }
+    // La pastille se remplit au hover de la card
+    &:hover .bulle {
+        background-color: var(--color-sarcelle);
+        border-color: var(--color-sarcelle);
+        color: var(--color-white);
     }
     hr {
         // border-bottom: 1px solid var(--color-border);
@@ -181,6 +191,12 @@ section {
             display: flex;
             gap: 8px;
             align-items: center;
+            // La flèche s'éloigne du texte au hover
+            transition: gap 0.3s $ease-out-cubic;
+            &:hover,
+            &:focus-visible {
+                gap: 14px;
+            }
         }
         .icon {
             fill: none;
@@ -226,6 +242,11 @@ section {
                 color: var(--color-or);
                 border-color: var(--color-or);
             }
+            .card:hover .bulle {
+                background-color: var(--color-or);
+                color: var(--color-bg-secondary);
+                opacity: 1;
+            }
             .bot {
                 display: flex;
                 flex-direction: column;
@@ -236,9 +257,6 @@ section {
                 }
                 a {
                     color: var(--color-or);
-                    display: flex;
-                    gap: 8px;
-                    align-items: center;
                 }
                 .icon {
                     fill: none;
