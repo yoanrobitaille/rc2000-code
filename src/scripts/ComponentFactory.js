@@ -1,6 +1,7 @@
 import Carousel from './components/Carousel.js';
 import Scrolly from './components/Scrolly.js';
 import Header from './components/Header.js';
+import ContactForm from './components/ContactForm.js';
 export default class ComponentFactory {
   constructor() {
     this.componentInstances = [];
@@ -8,6 +9,7 @@ export default class ComponentFactory {
       Scrolly,
       Carousel,
       Header,
+      ContactForm,
     };
     this.init();
   }
