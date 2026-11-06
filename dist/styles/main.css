@@ -1655,16 +1655,20 @@ a.disabled {
   background-color: rgba(255, 255, 255, 0.09);
   box-shadow: 0 0 0 3px rgba(201, 164, 92, 0.25);
 }
-.contact-form input:not([type=hidden], [type=checkbox]):user-invalid,
-.contact-form textarea:user-invalid {
-  border-color: #e88a7a;
-}
 .contact-form input:not([type=hidden], [type=checkbox]):-webkit-autofill,
 .contact-form textarea:-webkit-autofill {
   -webkit-text-fill-color: var(--color-white);
   box-shadow: 0 0 0 1000px #1a3440 inset;
   -webkit-transition: background-color 9999s;
   transition: background-color 9999s;
+}
+.contact-form input[aria-invalid=true] {
+  border-color: #e88a7a;
+}
+.contact-form .contact-form__erreur {
+  font-size: 13px;
+  line-height: 140%;
+  color: #f0a493;
 }
 .contact-form textarea {
   min-height: 140px;

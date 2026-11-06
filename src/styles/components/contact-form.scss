@@ -80,16 +80,24 @@
             background-color: rgb(255 255 255 / 9%);
             box-shadow: 0 0 0 3px rgb(201 164 92 / 25%);
         }
-        // Rouge seulement après que la personne a touché au champ
-        &:user-invalid {
-            border-color: #e88a7a;
-        }
         // Remplissage automatique du navigateur : garde le fond foncé
         &:-webkit-autofill {
             -webkit-text-fill-color: var(--color-white);
             box-shadow: 0 0 0 1000px #1a3440 inset;
             transition: background-color 9999s;
         }
+    }
+
+    // Erreur affichée sous un champ
+    input[aria-invalid='true'] {
+        border-color: #e88a7a;
+    }
+
+    // « & & » : plus précis que « .footer p », qui met les paragraphes en blanc
+    & &__erreur {
+        font-size: 13px;
+        line-height: 140%;
+        color: #f0a493;
     }
 
     textarea {

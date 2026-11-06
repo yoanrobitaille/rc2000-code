@@ -287,40 +287,45 @@
                     </div>
                 </div>
                 <div class="left">
-                    <form class="contact-form" data-component="ContactForm" action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="85412a86-b347-42d4-b253-f7c486c1cb7e">
-                        <input type="hidden" name="subject" value="RC2000">
+                    <form class="contact-form" data-component="ContactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+                        <input type="hidden" name="access_key" value="2fb9d283-325d-4fba-8a59-3e1738c8f0dd">
+                        <input type="hidden" name="subject" value="RC2000.CA - Demande de Location">
                         <input class="contact-form__piege" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
 
                         <div class="contact-form__champs">
                             <div class="contact-form__rangee">
                                 <div class="contact-form__champ">
                                     <label for="contact-prenom">Prénom</label>
-                                    <input id="contact-prenom" name="Prénom" type="text" placeholder="Jean" autocomplete="given-name" required>
+                                    <input id="contact-prenom" name="Prénom" type="text" placeholder="Jean" autocomplete="given-name" required aria-describedby="contact-prenom-erreur">
+                                    <p id="contact-prenom-erreur" class="contact-form__erreur" hidden></p>
                                 </div>
                                 <div class="contact-form__champ">
                                     <label for="contact-nom">Nom</label>
-                                    <input id="contact-nom" name="Nom" type="text" placeholder="Tremblay" autocomplete="family-name" required>
+                                    <input id="contact-nom" name="Nom" type="text" placeholder="Tremblay" autocomplete="family-name" required aria-describedby="contact-nom-erreur">
+                                    <p id="contact-nom-erreur" class="contact-form__erreur" hidden></p>
                                 </div>
                             </div>
 
                             <div class="contact-form__rangee">
                                 <div class="contact-form__champ">
                                     <label for="contact-courriel">Courriel</label>
-                                    <input id="contact-courriel" name="email" type="email" placeholder="vous@exemple.com" autocomplete="email" required>
+                                    <input id="contact-courriel" name="email" type="email" placeholder="vous@exemple.com" autocomplete="email" required aria-describedby="contact-courriel-erreur">
+                                    <p id="contact-courriel-erreur" class="contact-form__erreur" hidden></p>
                                 </div>
                                 <div class="contact-form__champ">
                                     <label for="contact-telephone">
                                         Téléphone
                                         <span>(facultatif)</span>
                                     </label>
-                                    <input id="contact-telephone" name="Téléphone" type="tel" placeholder="(514) 555-1234" autocomplete="tel">
+                                    <input id="contact-telephone" name="Téléphone" type="tel" inputmode="tel" maxlength="20" placeholder="(514) 555-1234" autocomplete="tel" aria-describedby="contact-telephone-erreur">
+                                    <p id="contact-telephone-erreur" class="contact-form__erreur" hidden></p>
                                 </div>
                             </div>
 
                             <div class="contact-form__champ">
                                 <label for="contact-message">Message</label>
-                                <textarea id="contact-message" name="Message" rows="5" placeholder="Dates souhaitées, durée du séjour, nombre de personnes, questions…" required></textarea>
+                                <textarea id="contact-message" name="Message" rows="5" placeholder="Dates souhaitées, durée du séjour, nombre de personnes, questions…" required aria-describedby="contact-message-erreur"></textarea>
+                                <p id="contact-message-erreur" class="contact-form__erreur" hidden></p>
                             </div>
 
                             <p class="contact-form__mention">Vos renseignements servent uniquement à répondre à votre demande.</p>
