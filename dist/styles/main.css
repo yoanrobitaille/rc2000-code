@@ -1761,6 +1761,29 @@ a.disabled {
   }
 }
 
+details.contact-form__mention summary {
+  cursor: pointer;
+  text-wrap: pretty;
+  list-style: none;
+}
+details.contact-form__mention summary::-webkit-details-marker {
+  display: none;
+}
+details.contact-form__mention summary:focus-visible {
+  outline: 2px solid var(--color-or);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+details.contact-form__mention .contact-form__plus {
+  white-space: nowrap;
+  color: var(--color-or);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+details.contact-form__mention p {
+  margin-top: 8px;
+}
+
 .header {
   padding: 15px 0;
   position: sticky;
