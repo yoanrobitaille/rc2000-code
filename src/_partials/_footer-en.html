@@ -1,0 +1,109 @@
+    <footer class="footer">
+        <div class="wrapper">
+            <div class="infos">
+
+                <div class="right">
+                    <div class="title">
+                        
+                        <p class="etiquette">Contact us</p>
+                        <h2>Let’s talk about your next stay or your future office.</h2>
+                    </div>
+                    <p class="lead">Tell us which property interests you, your dates and how long you’d like to stay. The owner replies directly, with no middleman.</p>
+
+                    <div class="proprietaire">
+                        <svg class="icon icon--md">
+                            <use xlink:href="#icon-user"></use>
+                        </svg>
+                        <div>
+                            <h3>Réjean Robitaille</h3>
+                            <p>Owner</p>
+                        </div>
+                    </div>
+                </div>
+            <div class="left">
+                <form class="contact-form" data-component="ContactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+                    <input type="hidden" name="access_key" value="2fb9d283-325d-4fba-8a59-3e1738c8f0dd">
+                    <input type="hidden" name="subject" value="RC2000.CA - Demande de Location">
+                    <input type="hidden" name="Langue" value="Anglais">
+                    <input class="contact-form__piege" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                    <div class="contact-form__champs">
+                        <div class="contact-form__rangee">
+                            <div class="contact-form__champ">
+                                <label for="contact-prenom">First name</label>
+                                <input id="contact-prenom" name="Prénom" type="text" placeholder="John" autocomplete="given-name" required aria-describedby="contact-prenom-erreur">
+                                <p id="contact-prenom-erreur" class="contact-form__erreur" hidden></p>
+                            </div>
+                            <div class="contact-form__champ">
+                                <label for="contact-nom">Last name</label>
+                                <input id="contact-nom" name="Nom" type="text" placeholder="Smith" autocomplete="family-name" required aria-describedby="contact-nom-erreur">
+                                <p id="contact-nom-erreur" class="contact-form__erreur" hidden></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-form__rangee">
+                            <div class="contact-form__champ">
+                                <label for="contact-courriel">Email</label>
+                                <input id="contact-courriel" name="email" type="email" placeholder="you@example.com" autocomplete="email" required aria-describedby="contact-courriel-erreur">
+                                <p id="contact-courriel-erreur" class="contact-form__erreur" hidden></p>
+                            </div>
+                            <div class="contact-form__champ">
+                                <label for="contact-telephone">
+                                    Phone
+                                    <span>(optional)</span>
+                                </label>
+                                <input
+                                    id="contact-telephone"
+                                    name="Téléphone"
+                                    type="tel"
+                                    inputmode="tel"
+                                    maxlength="20"
+                                    placeholder="(514) 555-1234"
+                                    autocomplete="tel"
+                                    aria-describedby="contact-telephone-erreur"
+                                >
+                                <p id="contact-telephone-erreur" class="contact-form__erreur" hidden></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-form__champ">
+                            <label for="contact-message">Message</label>
+                            <textarea
+                                id="contact-message"
+                                name="Message"
+                                rows="5"
+                                placeholder="Preferred dates, length of stay, number of guests, questions…"
+                                required
+                                aria-describedby="contact-message-erreur"
+                            ></textarea>
+                            <p id="contact-message-erreur" class="contact-form__erreur" hidden></p>
+                        </div>
+
+                        <p class="contact-form__mention">Your information is only used to respond to your request.</p>
+
+                        <div class="contact-form__actions">
+                            <button class="contact-form__bouton" type="submit">Send message</button>
+                            <p class="contact-form__statut" role="status" aria-live="polite"></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-form__succes" hidden>
+                        <h3 tabindex="-1">Message sent</h3>
+                        <p>
+                            Thank you,
+                            <span class="contact-form__prenom"></span>
+                            ! Réjean will get back to you by email shortly.
+                        </p>
+                        <button class="contact-form__nouveau" type="button">Send another message</button>
+                    </div>
+                </form>
+                
+                
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">© 2026 RC2000 Properties</p>
+    </div>
+    </footer>
+</body>
+</html>

@@ -1,14 +1,40 @@
-// Messages d'erreur affichés sous les champs (en français, peu importe la langue du navigateur)
-const MESSAGES = {
-  'contact-prenom': { vide: 'Entrez votre prénom.' },
-  'contact-nom': { vide: 'Entrez votre nom.' },
-  'contact-courriel': {
-    vide: 'Entrez votre adresse courriel.',
-    format: 'Entrez une adresse courriel valide, par exemple vous@exemple.com.',
+const TEXTES = {
+  fr: {
+    'contact-prenom': { vide: 'Entrez votre prénom.' },
+    'contact-nom': { vide: 'Entrez votre nom.' },
+    'contact-courriel': {
+      vide: 'Entrez votre adresse courriel.',
+      format:
+        'Entrez une adresse courriel valide, par exemple vous@exemple.com.',
+    },
+    'contact-telephone': {
+      format: 'Entrez un numéro à 10 chiffres, par exemple (514) 555-1234.',
+    },
+    'contact-message': { vide: 'Écrivez votre message.' },
+    envoi: 'Envoi en cours…',
+    echec:
+      "Le message n'a pas pu être envoyé. Réessayez dans quelques instants.",
   },
-  'contact-telephone': { format: 'Entrez un numéro à 10 chiffres, par exemple (514) 555-1234.' },
-  'contact-message': { vide: 'Écrivez votre message.' },
+  en: {
+    'contact-prenom': { vide: 'Please enter your first name.' },
+    'contact-nom': { vide: 'Please enter your last name.' },
+    'contact-courriel': {
+      vide: 'Please enter your email address.',
+      format:
+        'Please enter a valid email address, for example you@example.com.',
+    },
+    'contact-telephone': {
+      format:
+        'Please enter a 10-digit phone number, for example (514) 555-1234.',
+    },
+    'contact-message': { vide: 'Please write your message.' },
+    envoi: 'Sending…',
+    echec: 'Your message could not be sent. Please try again in a few moments.',
+  },
 };
+
+const langue = document.documentElement.lang === 'en' ? 'en' : 'fr';
+const MESSAGES = TEXTES[langue];
 
 export default class ContactForm {
   constructor(element) {
@@ -23,7 +49,9 @@ export default class ContactForm {
     this.texteBouton = this.bouton.textContent;
 
     // Tous les champs à valider (ceux qui ont un message d'erreur)
-    this.champsAValider = [...element.querySelectorAll('input, textarea')].filter((champ) => MESSAGES[champ.id]);
+    this.champsAValider = [
+      ...element.querySelectorAll('input, textarea'),
+    ].filter((champ) => MESSAGES[champ.id]);
 
     this.init();
   }
@@ -54,7 +82,9 @@ export default class ContactForm {
     }
 
     if (champ.type === 'email') {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(valeur) ? '' : messages.format;
+      return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(valeur)
+        ? ''
+        : messages.format;
     }
 
     if (champ.type === 'tel') {
@@ -93,7 +123,12 @@ export default class ContactForm {
     const dejaAffichee = !erreur.hidden;
 
     // Met le téléphone au format (514) 555-1234 quand on quitte le champ
-    if (champ.type === 'tel' && afficher && !message && champ.value.trim() !== '') {
+    if (
+      champ.type === 'tel' &&
+      afficher &&
+      !message &&
+      champ.value.trim() !== ''
+    ) {
       const c = this.chiffresTelephone(champ.value);
       champ.value = `(${c.slice(0, 3)}) ${c.slice(3, 6)}-${c.slice(6)}`;
     }
@@ -111,7 +146,9 @@ export default class ContactForm {
    * Valide tous les champs et place le curseur sur le premier en erreur.
    */
   validerTout() {
-    const invalides = this.champsAValider.filter((champ) => !this.validerChamp(champ, true));
+    const invalides = this.champsAValider.filter(
+      (champ) => !this.validerChamp(champ, true),
+    );
     if (invalides.length) invalides[0].focus();
     return invalides.length === 0;
   }
@@ -169,7 +206,7 @@ export default class ContactForm {
 
       this.afficherSucces(prenom);
     } catch (erreur) {
-      this.afficherStatut("Le message n'a pas pu être envoyé. Réessayez dans quelques instants.", true);
+      this.afficherStatut(MESSAGES.echec, true);
     } finally {
       this.chargement(false);
     }
@@ -177,7 +214,7 @@ export default class ContactForm {
 
   chargement(actif) {
     this.bouton.disabled = actif;
-    this.bouton.textContent = actif ? 'Envoi en cours…' : this.texteBouton;
+    this.bouton.textContent = actif ? MESSAGES.envoi : this.texteBouton;
   }
 
   afficherStatut(message, erreur = false) {
